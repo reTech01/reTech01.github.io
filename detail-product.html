@@ -429,13 +429,13 @@
 		
 		$("#label_name").html(data.name)
 		$("#label_description").html(data.description)
-		$("#label_image").attr('src',`assets/images/${data.image[0]}`)
+		$("#label_image").attr('src',`${data.image[0]}`)
 		$("#label_category").html(formatTitleCase(data.category))
 
 
 		data.image.forEach((item,index)=>{
 			$('#label_images').append(`<div data-id="${index}" data-src="${item}" class=" item-image item-image-${index} inline-block h-[45px] overflow-hidden mr-2 rounded ${index==0 ? 'border border-blue-600' : ''}">
-				            <img onerror="this.onerror=null; this.src='https://placehold.co/60'" src="assets/images/${item}" alt="Industry 4.0" class="w-20 h-12 object-cover">
+				            <img onerror="this.onerror=null; this.src='https://placehold.co/60'" src="${item}" alt="Industry 4.0" class="w-20 h-12 object-cover">
 				        </div>`)
 		})
 
@@ -455,7 +455,7 @@
       		const index = $(this).attr('data-id')
       		$('.item-image').removeClass('border border-blue-600')
       		$(`.item-image-${index}`).addClass('border border-blue-600')
-      		$("#label_image").attr('src',`assets/images/${image}`)
+      		$("#label_image").attr('src',`${image}`)
 
 
       		currentImage = image
